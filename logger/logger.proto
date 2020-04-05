@@ -1,0 +1,23 @@
+syntax = "proto3"
+
+package logger
+
+service Logger {
+  
+}
+
+enum Severity {
+  TRACE = 0;
+  DEBUG = 1;
+  INFO = 2;
+  WARN = 3;
+  ERROR = 4;
+  FATAL = 5;
+}
+
+message Log {
+  required Severity severity = 1;
+  required string log_message = 2;
+
+  map<string, string> tags = 3;
+}
