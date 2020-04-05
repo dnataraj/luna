@@ -14,3 +14,7 @@ Initial components being considered:
 
 ![Architecture](./logger.png)
 
+### Installing gRPC / Protobuf
+
+https://grpc.io/docs/quickstart/go/
+

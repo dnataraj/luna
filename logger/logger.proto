@@ -1,9 +1,10 @@
-syntax = "proto3"
+syntax = "proto3";
 
-package logger
+// import "google/protobuf/empty.proto";
+package logger;
 
 service Logger {
-  
+  rpc LogLine(Log) returns (Empty) {} 
 }
 
 enum Severity {
@@ -16,8 +17,11 @@ enum Severity {
 }
 
 message Log {
-  required Severity severity = 1;
-  required string log_message = 2;
+  Severity severity = 1;
+  string log_message = 2;
 
   map<string, string> tags = 3;
+}
+
+message Empty {
 }
