@@ -13,7 +13,8 @@ import (
 )
 
 var (
-	port = flag.Int("port", 5050, "The server port")
+	port     = flag.Int("port", 5050, "The server port")
+	nsq_addr = flag.String("nsq_addr", "localhost:4150", "The address for NSQ")
 )
 
 func main() {
@@ -27,6 +28,7 @@ func main() {
 
 	server := grpc.NewServer(opts...)
 	ls := &service.LoggerServer{
+		NsqAddr: *nsq_addr,
 		Config:  nsq.NewConfig(),
 		Clients: make(map[string]*nsq.Producer, 0),
 	}
