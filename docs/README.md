@@ -1,4 +1,4 @@
-Luna - A Simple Distributed Logger
+Luna - A Simple Distributed Logger (Work in progress)
 ============
 
 
